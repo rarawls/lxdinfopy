@@ -17,7 +17,13 @@ def hr_bytes(bites, suffix='B'):
 # SETUP ######################################################################
 
 
-client = pylxd.Client()
+try:
+    client = pylxd.Client()
+except:
+    print('Looks like LXD isn\'t running or you don\'t have permissions.)')
+    print('Exiting...')
+    exit(1)
+
 containers = client.containers.all()
 container_list = []  # List for collected information for printing
 
@@ -80,3 +86,4 @@ totals = '|{:<{w}}|{:>{m}}|{:>{p}}|'.format(
     p=plen)
  
 print(totals)
+
