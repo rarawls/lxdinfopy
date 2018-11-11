@@ -29,7 +29,7 @@ container_list = []  # List for collected information for printing
 
 total_memory_used = 0  # Running sum of memory
 total_peak_potential = 0  # Running sum of peak memory
-clen = 4  # Max length of container name string; min=4 due to header 
+clen = 5  # Max length of container name string; min=4 due to 'Total' label
 mlen = 5  # Max length of memory string; min=5 due to header
 plen = 4  # Max length of peak memory string; min=4 due to header
 
