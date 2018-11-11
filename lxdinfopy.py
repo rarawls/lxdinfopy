@@ -64,7 +64,8 @@ table_width = len('|{:^{w}}|{:^{m}}|{:^{p}}|'.format('', '', '',
 # Print header
 print('|{:^{w}}|{:^{m}}|{:^{p}}|'.format('Name', 'Usage', 'Peak',
                                          w=clen, m=mlen, p=plen))
-print('|{:-<{w}}+{:-<{m}}|{:-<{p}}|'.format('', '', '',
+# Print HR
+print('|{:-<{w}}+{:-<{m}}+{:-<{p}}|'.format('', '', '',
                                             w=clen, m=mlen, p=plen))
 
 # Print memory use for each container
@@ -75,10 +76,11 @@ for c in container_list:
     print('|{:<{w}}|{:>{m}}|{:>{p}}|'.format(name, usage, peak,
                                              w=clen, m=mlen, p=plen))
 
-# Print total memory use
-print('|{:-<{w}}+{:-<{m}}|{:-<{p}}|'.format('', '', '',
+# Print HR
+print('|{:-<{w}}+{:-<{m}}+{:-<{p}}|'.format('', '', '',
                                             w=clen, m=mlen, p=plen))
 
+# Print total memory use
 totals = '|{:<{w}}|{:>{m}}|{:>{p}}|'.format(
     'Total', hr_bytes(total_memory_used), hr_bytes(total_peak_potential),
     w=clen,
